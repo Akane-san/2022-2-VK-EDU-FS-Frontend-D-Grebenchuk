@@ -19,7 +19,6 @@ var/
 *.egg-info/
 .installed.cfg
 *.egg
-package-lock.json
 
 # Installer logs
 pip-log.txt
@@ -88,6 +87,9 @@ bower_components
 *.launch
 .settings/
 *.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
 
 # misc
 .sass-cache
