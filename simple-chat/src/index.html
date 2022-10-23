@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Chat Box</title>
+<link type="text/css" rel="stylesheet" href="./src/index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="phone-header">
+        <div class="phone-header-icons">
+        <img src="./src/square.png">
+        <img src="./src/circle.png">
+        <img src="./src/triangle3.png">
+        </div>
+        </div>
+
+        <div class="msg-header">
+        <div class="go-back">
+            <img src="./src/left-arrow.png">
+        </div>
+        <div class="msg-header-img">
+            <img src="./src/user1.jpeg">
+        </div>
+        <div class="active">
+            <h4>Дженнифер</h4>
+            <h6>Была 2 часа назад</h6>
+        </div>
+        <div class="msg-header-icons">
+            <img src="./src/search.png">
+            <img src="./src/menu-vertical.png">
+        </div>
+        </div>
+
+        <div class="chat-page">
+            <div class="msg-inbox">
+            <div class="chats">
+            <div class="msg-page">
+                <div class="received-chats">
+                <div class="received-chats-msg">
+                <div class="received-chats-msg-inbox">
+                <p>Привет! Меня зовут Дженнифер! Давай знакомиться!</p>
+                <span class="time">11:01 PM | October</span>
+                </div>
+                </div>
+                </div>
+
+
+                <div id="outgoing-chats-elem" class="outgoing-chats">
+                <div class="outgoing-chats-msg">
+                <p>Привет!</p>
+                <span class="time">11:01 PM | October</span>
+                </div>
+                </div>
+            </div>
+            </div>
+            </div>
+
+            <div class="bottom-icons">
+            <img src="./src/attach.png">
+            </div>
+
+            <div class="input-group">
+            <input id="outgoing-chats-elem" type="text" class="form-control" placeholder="write a message...">
+            <div class="input-group-append">
+            <span class="input-group-text">
+            <i class="fa fa-paper-plane"></i>
+            </span>
+            <button class="send">send message</button>
+            <button class="save">save chat</button>
+            <button class="clear">clear chat</button>
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
