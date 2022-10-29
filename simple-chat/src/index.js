@@ -2,8 +2,6 @@ let input = document.querySelector('input')
 input.focus()
 
 // находим кнопки
-let sendButton = document.querySelector('.send')
-let saveButton = document.querySelector('.save')
 let clearButton = document.querySelector('.clear')
 
 // находим контейнер
@@ -25,27 +23,24 @@ if (localStorage.templates) {
       .map(p => box.insertAdjacentHTML('beforeend', p))
 }
 
-// обрабатываем отправку сообщений
-sendButton.addEventListener('click', () => {
-    // получаем текст сообщения
-    let text = document.querySelector('input').value
-    // формируем шаблон
-    let template = `<p>${text}</p><span class="time">${new Date().toLocaleTimeString('ru-RU', options)}</span>`
-    // добавляем шаблон в контейнер
-    box.insertAdjacentHTML('beforeend', template)
-    // сбрасываем значение инпута
-    input.value = ''
-    // записываем сообщение в хранилище
-    localStorage.message = template
-
-    var arr2 = JSON.parse(localStorage.getItem('templates')) || []
-    arr2.push(template)
-    localStorage.setItem('templates', JSON.stringify(arr2))
-})
-
-// добавляем задачу в список при нажатии "Enter"
 window.addEventListener('keydown', e => {
-    if (e.keyCode == 13) sendButton.click()
+  if (e.keyCode == 13)
+  {
+  // получаем текст сообщения
+  let text = document.querySelector('input').value
+  // формируем шаблон
+  let template = `<p>${text}</p><span class="time">${new Date().toLocaleTimeString('ru-RU', options)}</span>`
+  // добавляем шаблон в контейнер
+  box.insertAdjacentHTML('beforeend', template)
+  // сбрасываем значение инпута
+  input.value = ''
+  // записываем сообщение в хранилище
+  localStorage.message = template
+
+  var arr2 = JSON.parse(localStorage.getItem('templates')) || []
+  arr2.push(template)
+  localStorage.setItem('templates', JSON.stringify(arr2))
+  }
 })
 
 // обрабатываем событие "storage"
@@ -57,19 +52,6 @@ window.addEventListener('storage', event => {
     // нажимаем кнопку для очистки хранилища
     // иначе добавляем сообщение в контейнер
     event.newValue == null ? clearButton.click() : box.insertAdjacentHTML('afterbegin', event.newValue)
-})
-
-
-
-
-// сохраняем переписку
-saveButton.addEventListener('click', () => {
-  // массив сообщений
-  let messages = []
-  // заполняем массив
-  document.querySelectorAll('p').forEach(p => messages.push(p.outerHTML))
-  // записываем данные в хранилище
-  localStorage.messages = messages
 })
 
 // очищаем хранилище и контейнер

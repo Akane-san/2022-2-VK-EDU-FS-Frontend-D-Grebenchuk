@@ -8,25 +8,20 @@
 }
 .phone-header
 {
-    border: 1px solid #ccc;
-    width: 100%;
-    height: 10%;
-    border-bottom: none;
-    display: inline-block;
+    display: flex;
+    flex: wrap;
     background-color: #8E24AA;
-    vertical-align: top;
 }
 .phone-header-icons
 {
-    width: 120px;
-    float: right;
-    margin-top: 12px;
-    margin-right: 10px;
-}
-.phone-header-icons img
-{
-    width: 20%;
-    height: auto;
+    margin-left: auto;
+    background-color: #8E24AA;
+    color: #EFC5EF;
+    font-size: 35px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    display: flex;
 }
 img
 {
@@ -35,13 +30,10 @@ img
 }
 .msg-header
 {
-    border: 1px solid #ccc;
-    width: 100%;
-    height: 10%;
-    border-bottom: none;
-    display: inline-block;
+    display: flex;
+    flex-direction: wrap;
+    align-items: flex-start;
     background-color: #8E24AA;
-    vertical-align: top;
 }
 .go-back
 {
@@ -57,6 +49,7 @@ img
     margin-left: 5%;
     margin-top: 12px;
     float: left;
+    display: flex;
 }
 .active
 {
@@ -81,19 +74,15 @@ img
 {
     width: 20%;
     float: right;
-    margin-top: 12px;
+    margin-top: 30px;
     margin-right: 10px;
     margin: 10px;
     cursor: pointer;
-}
-.msg-header-icons img
-{
-    width: 30%;
-    height: auto;
+    display: flex;
 }
 .chat-page
 {
-    padding: 0 0 50px 0;
+    padding: 0 0 0px 0;
 }
 .msg-inbox
 {
@@ -160,26 +149,21 @@ img
     font-size: 12px;
     margin: 8px 0 0;
 }
-.msg-bottom
-{
-    position: relative;
-    height: 10%;
-    background-color: #EFC5EF;
-}
 .input-group
 {
-    float:right;
-    margin-top: 13px;
-    margin-right: 20px;
-    outline: none !important;
-    border-radius: 10px;
-    width: 61% !important;
-    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #8E24AA;
+    padding: 0;
+    height: 48px;
+    flex: none;
+    order: 0;
+    flex-grow: 1;
 }
 .form-control
 {
-    border: none !important;
-    border-radius: 10px !important;
+    border-radius: 0px !important;
 }
 .input-group-text
 {
@@ -190,17 +174,50 @@ img
 {
     float: right;
     margin-top: 17px;
-    width: 30% !important;
+    width: 20% !important;
     margin-left: 22px;
-}
-.bottom-icons img
-{
-    color: #fff;
-    padding: 5px;
 }
 .form-control:focus
 {
     border-color: none !important;
     box-shadow: none !important;
     border-radius: 20px;
+}
+
+.material-symbols-outlined {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0;
+
+    width: 48px;
+    height: 48px;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #efc5ef;
+}
+
+.material-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+
+    width: 48px;
+    height: 48px;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #efc5ef;
 }
