@@ -4,32 +4,46 @@
 <title>Chat Box</title>
 <base href="../img">
 <link type="text/css" rel="stylesheet" href="src/index.css">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <div class="phone-header">
         <div class="phone-header-icons">
-        <img src="/src/square.png">
-        <img src="img/circle.png">
-        <img src="src/triangle3.png">
+            <span class="material-icons">
+                square
+            </span>
+            <span class="material-icons">
+                circle
+            </span>
+            <span class="material-icons">
+                tornado
+            </span>
         </div>
         </div>
 
         <div class="msg-header">
-        <div class="go-back">
-            <img src="src/left-arrow.png">
-        </div>
-        <div class="msg-header-img">
-            <img src="src/user1.jpeg">
-        </div>
-        <div class="active">
-            <h4>Дженнифер</h4>
-            <h6>Была 2 часа назад</h6>
-        </div>
-        <div class="msg-header-icons">
-            <img src="src/search.png">
-            <img src="src/menu-vertical.png">
-        </div>
+            <div class="go-back">
+                <span class="material-symbols-outlined">
+                    arrow_back
+                </span>
+            </div>
+            <div class="msg-header-img">
+                <img src="https://avatars.mds.yandex.net/i?id=5aa03e307d3071d11001183dfaddd98f-4476638-images-thumbs&n=13&exp=1">
+            </div>
+            <div class="active">
+                <h4>Дженнифер</h4>
+                <h6>Была 2 часа назад</h6>
+            </div>
+            <div class="msg-header-icons">
+                <span class="material-symbols-outlined">
+                    search
+                    </span>
+                <span class="material-symbols-outlined">
+                    more_vert
+                </span>
+            </div>
         </div>
 
         <div class="chat-page">
@@ -55,18 +69,14 @@
             </div>
             </div>
             </div>
-
-            <div class="bottom-icons">
-            <img src="src/attach.png">
-            </div>
-
-            <div class="input-group">
+        </div>
+        <div class="input-group">
             <input id="outgoing-chats-elem" type="text" class="form-control" placeholder="write a message...">
+            <span class="material-symbols-outlined">
+                attachment
+            </span>
             <div class="input-group-append">
-            <button class="send">send message</button>
-            <button class="save">save chat</button>
-            <button class="clear">clear chat</button>
-            </div>
+                <button class="clear">clear chat</button>
             </div>
         </div>
     </div>
