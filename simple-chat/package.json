@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "start": "NODE_OPTIONS=--openssl-legacy-provider webpack-dev-server --mode=development --hot",
+    "start": "webpack-dev-server --mode=development --hot",
     "build": "webpack --mode=development"
   },
   "devDependencies": {

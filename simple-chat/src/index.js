@@ -3,20 +3,26 @@ input.focus()
 
 // находим кнопки
 let sendButton = document.querySelector('.send')
-
-
 let saveButton = document.querySelector('.save')
 let clearButton = document.querySelector('.clear')
 
 // находим контейнер
 let box = document.getElementById('outgoing-chats-elem')
 
-// если в хранилище имеется ключ "messages"
-if (localStorage.messages) {
-    // формируем переписку
-    localStorage.messages
-        .split('</p>,')
-        .map(p => box.insertAdjacentHTML('beforeend', p))
+var options = {
+  timezone: 'UTC',
+  hour: 'numeric',
+  minute: 'numeric',
+  month: 'long',
+  day: 'numeric'
+};
+
+if (localStorage.templates) {
+  // формируем переписку
+  var t = JSON.parse(localStorage.templates)
+  t
+      //.split('</p>,|</span>,')
+      .map(p => box.insertAdjacentHTML('beforeend', p))
 }
 
 // обрабатываем отправку сообщений
@@ -24,14 +30,17 @@ sendButton.addEventListener('click', () => {
     // получаем текст сообщения
     let text = document.querySelector('input').value
     // формируем шаблон
-    let template = `<div id="outgoing-chats-elem" class="outgoing-chats"><div class="outgoing-chats-msg"><p>${text}</p><span class="time">${new Date().toLocaleTimeString()}</span></div></div>`
-    //let template = `<p><time>${new Date().toLocaleTimeString()}</time> ${text}</p>`
+    let template = `<p>${text}</p><span class="time">${new Date().toLocaleTimeString('ru-RU', options)}</span>`
     // добавляем шаблон в контейнер
     box.insertAdjacentHTML('beforeend', template)
     // сбрасываем значение инпута
     input.value = ''
     // записываем сообщение в хранилище
     localStorage.message = template
+
+    var arr2 = JSON.parse(localStorage.getItem('templates')) || []
+    arr2.push(template)
+    localStorage.setItem('templates', JSON.stringify(arr2))
 })
 
 // добавляем задачу в список при нажатии "Enter"
