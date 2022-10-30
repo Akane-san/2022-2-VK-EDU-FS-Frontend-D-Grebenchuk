@@ -16,6 +16,7 @@
   "author": "",
   "license": "ISC",
   "description": "",
+  "homepage":"https://akane-san.github.io/2022-2-VK-EDU-FS-Frontend-D-Grebenchuk/",
   "devDependencies": {
     "@babel/core": "^7.19.1",
     "@babel/preset-env": "^7.19.1",
